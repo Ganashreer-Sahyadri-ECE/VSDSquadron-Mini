@@ -1,1 +1,8 @@
 
+# Pin mapping for FPGA
+
+set_io TRIG   0  # GPIO 0 for TRIG pin
+set_io ECHO   1  # GPIO 1 for ECHO pin
+set_io RED_LED 2 # GPIO 2 for Red LED
+set_io YELLOW_LED 3 # GPIO 3 for Yellow LED
+set_io GREEN_LED 4  # GPIO 4 for Green LED
