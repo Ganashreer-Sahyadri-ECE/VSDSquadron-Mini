@@ -57,7 +57,7 @@ Verified LED behavior.
 
 ### Step 4: Final Documentation
 
-[Working vedio.mp4](./Task1/Working%20vedio.mp4)
+[Working vedio.mp4](./Task%201/Working%20vedio.mp4)
 
 LED blinks as expected.
 
