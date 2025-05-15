@@ -12,7 +12,7 @@ Convert incoming ASCII/hex data into displayable numbers
 
 Drive a 7-segment display or LCD using the decoded data
 
-(Optional) Build a terminal interface on a PC
+Build a terminal interface on a PC
 
 Ensure consistent, real-time updates to the display
 
