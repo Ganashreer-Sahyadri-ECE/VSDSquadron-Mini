@@ -223,6 +223,13 @@ Commands translated into output actions.
 
 Commands from Docklight directly triggered GPIO responses like turning LEDs on/off.
 
+[ledtop.v](./Task%206/ledtop.v)
+
+[VSDSquadronFM.pcf](./Task%206/VSDSquadronFM.pcf)
+
+[leduart_rx.v](./Task%206/leduart_rx.v)
+
+[led vedio.mp4](./Task%206/led%20vedio.mp4)
 
 ### Task 6: Final Output — Display Control Using UART
 🎯 Overview
@@ -237,6 +244,14 @@ Display value increases with each input.
 Output is shown live on a 7-segment display.
 
 Components include top.v, uart_rx, seven_seg_decoder, PCF file, Makefile, and demo video.
+
+[top.v](./Task%206/top.v)
+
+[constraints.pcf](./Task%206/constraints.pcf)
+
+[uart_rx.v](./Task%206/uart_rx.v)
+
+[Seven_segment project vedio.mp4](./Task%206/Seven_segment%20project%20vedio.mp4)
 
 
 
