@@ -4,204 +4,215 @@
 ## College Name: Sahyadri College of Engineering and Management,Adyar,Mangaluru.
 ## Email ID:rameshganashree@gmail.com
 Linkedln: Ganashree Ramesh
-# Task 1: Understanding and Implementing the Verilog Code on FM
 
+# Task 1: Verilog Code Deployment on VSDSquadron FPGA Mini Board
 ### 🎯 Objective
+This task focuses on comprehending and implementing Verilog code onto the VSDSquadron FPGA Mini Board. Key activities involve reviewing Verilog modules, defining pin constraints via a PCF (Physical Constraint File), and uploading the design to the board as per the datasheet specifications.
 
-Implement Verilog code on the VSDSquadron FPGA Mini Board, including code review, PCF file creation, and hardware integration.
+### 🔹 Step 1: Verilog Code Analysis
+The given Verilog module utilizes an internal oscillator (SB_HFOSC) to drive logic that controls an onboard RGB LED. A frequency divider (counter) is included to make the clock usable for human-observable LED blinking.
 
-### Step 1: Understanding the Verilog Code
-This task involves analyzing the Verilog design, mapping pins, and flashing the code to the VSDSquadron FPGA Mini board.
+SB_HFOSC: Generates a clock internally without needing an external signal.
 
-### Verilog Code Summary:
+Counter: 28-bit register counts on each clock tick, with one bit (bit 5) exposed through testwire for signal probing.
 
-Uses internal oscillator (SB_HFOSC).
+RGB Driver (SB_RGBA_DRV): Drives the onboard LED. Blue is active; red and green are inactive.
+This setup offers a minimal design for onboard LED control and timing verification using the FPGA’s internal resources.
 
-Counter drives RGB LED.
+### 🔹 Step 2: Creating a Pin Constraint File
+Mapped Verilog signals to the FPGA hardware pins as follows:
 
-testwire used for debugging.
+led_red → Pin 39
 
-Internal Module Breakdown:
+led_blue → Pin 40
 
-SB_HFOSC: Generates internal clock.
+led_green → Pin 41
 
-28-bit counter: Slows down frequency.
+hw_clk → Pin 20
 
-SB_RGBA_DRV: Drives RGB LED (only blue is on).
+testwire → Pin 17
+This ensures proper signal-routing between the FPGA logic and the physical I/O.
 
-### Step 2: Creating the PCF File
+### 🔹 Step 3: Deployment to FPGA
+After referencing the datasheet and finalizing PCF mappings, the board was connected via USB-C. Using terminal commands:
 
-Pin Mapping:
+make clean was used to clear prior builds
 
-led_red: Pin 39
+make build compiled the Verilog source
 
-led_blue: Pin 40
+sudo make flash uploaded the design
+The onboard LED behavior confirmed a successful upload.
 
-led_green: Pin 41
+### 🔹 Step 4: Final Steps
+A video was captured demonstrating the blinking LED behavior to verify the system’s functioning.
 
-hw_clk: Pin 20
+# Task 2: UART Loopback Implementation
+🎯 Objective
+Develop a simple UART echo mechanism to test UART transmission and reception by looping back the sent data.
 
-testwire: Pin 17
+### 🔹 Step 1: Code Review
+The project contains three modules—uart_rx, uart_tx, and uart_loopback_top.
 
-### Step 3: Hardware Integration
+uart_rx: Receives serial input from the PC and converts it into 8-bit data.
 
-Read the datasheet.
+uart_tx: Sends the same data back.
 
-Mapped signals to pins in PCF file.
+uart_loopback_top: Connects both for an echo test.
+This setup allows basic testing of UART in 8N1 format (8 data bits, no parity, 1 stop bit).
 
-Used USB-C to connect board.
+### 🔹 Step 2: Documentation
+Created a block diagram to illustrate the module interactions.
 
-Ran make clean, make build, and sudo make flash.
+### 🔹 Step 3: Board Programming
+Files were compiled and flashed using:
 
-Verified LED behavior.
-
-### Step 4: Final Documentation
-
-[Working vedio.mp4](./Task%201/Working%20vedio.mp4)
-
-LED blinks as expected.
-
-# Task 2: UART Loopback Mechanism
-
-### Objective
-
-Implement a UART loopback to test UART functionality.
-
-### Step 1: Code Review
-
-Modules: uart_rx, uart_tx, uart_loopback_top
-
-Function: rx_dout is fed into tx module to echo back.
-
-### Step 2: Block Diagram
-
-Block diagram
-
-### Step 3: Implementation
-
+bash
+Copy
+Edit
+cd VSDSquadron-mini/<project-folder>
 make build
-
 sudo make flash
-
-Used Docklight for testing.
-
-### Step 4: Testing & Documentation
-
-Docklight terminal screenshot
-
-Video
+### 🔹 Step 4: Testing and Output
+Tested the design using the Docklight terminal. Sent characters were echoed back successfully.
 
 # Task 3: UART Transmitter Module
+🎯 Objective
+Build a Verilog-based module to transmit serial data from FPGA to external devices like a computer.
 
-Objective
+### 🔹 Step 1: Review
+The code continuously sends data (e.g., character 'd') through a UART transmitter module.
 
-Transmit data serially using UART from FPGA to external device.
-
-### Step 1: Code Review
-
-Verilog code
-
-### Step 2: Design Docs
+### 🔹 Step 2: System Design
+Included:
 
 Block diagram
 
 Circuit diagram
 
-### Step 3: Implementation
+### 🔹 Step 3: Upload to FPGA
+Navigated to the transmission folder, then ran:
 
-Commands: make build, sudo make flash
+bash
+Copy
+Edit
+make build
+sudo make flash
+### 🔹 Step 4: Testing
+Opened PuTTY to verify that characters were continuously transmitted. The output confirmed regular transmission.
 
-Folder: uart_transmission
+### 🔹 Step 5: Documentation
+Included all diagrams and a video showing successful data output.
 
-### Step 4: Testing
+# Task 4: UART-Based Sensor Communication
+### 🎯 Goal
+Transmit real-time data from a connected sensor via UART to a PC for monitoring.
 
-Used PuTTY terminal.
+### 🔹 Working
 
-Verified repeated transmission of character 'd'.
+Sensor input is read by the FPGA.
 
-### Step 5: Documentation
+Data is prepared in UART format.
 
-Video
+UART TX module sends it to an external device.
 
-Output
+The system consists of:
 
-# Task 4: UART-Based Sensor Data Transmission
+Sensor interface module
 
-## Objective
+UART transmission logic
 
-Transmit real-time sensor data via UART.
+Baud rate control
+Real-time data is visible on PuTTY or Docklight.
 
-### Step 1: Principle
+### 🔹 Applications
 
-Read sensor data via GPIO.
+Environmental data collection
 
-Use UART TX to send data serially.
+Industrial monitoring
 
-### Step 2: Verilog Implementation
+IoT sensor gateways
+Block diagrams, circuit visuals, and output video were included for verification.
 
-Sensor interface + UART TX + Baud generator.
+# Task 5: UART-Driven Display System (Theme 1)
+### 🎯 Goal
+Design a real-time system that displays incoming serial data on a 7-segment or LCD display using an FPGA.
 
-### Step 3: Applications
+### 🔹 Core Components
 
-Real-time monitoring.
+UART receiver to capture serial input
 
-Industrial & IoT.
+Decoder to convert characters to display format
 
-### Step 4: Output
+Display controller for 7-segment or LCD updates
 
-Putty screenshot
+### Workflow:
 
-Video
+UART module identifies start bits and receives characters.
 
-# Task 5: UART-Controlled Display and Actuator Systems
+Simulation tests input using '0'–'9'.
 
-## Theme 1: UART-Controlled Display System
+Received data is decoded for display.
 
-Objective
+Display driver updates visuals in real time.
 
-Capture UART data and show on display (7-segment or LCD).
+System integrated and deployed to FPGA.
 
-Components
+Communication verified using Docklight.
 
-UART RX
+# Task 6: UART-Controlled Actuation System (Theme 2)
+### 🎯 Objective
+Create a UART-based command interface to control actuators like LEDs or motors via the FPGA.
 
-ASCII Decoder
+### 🔹 System Components
 
-Display Driver
+UART receiver
 
-Workflow
+Command parser
 
-Create UART RX logic.
+Output control logic
 
-Simulate input ('0'-'9').
+Connected peripherals (e.g., LEDs)
 
-Decode ASCII.
+### Workflow:
 
-Drive display.
+FPGA tested with LED blink as baseline.
 
-Combine modules & test with Docklight.
+UART receiver developed and tested via terminal.
 
-## Theme 2: UART-Controlled Actuator System
+Parsing logic added to identify strings like "LED ON".
 
-Objective
+Commands translated into output actions.
 
-Control actuators (LED, motor) via UART commands.
-
-Steps
-
-UART RX receives input.
-
-Command decoder triggers GPIO.
-
-Actuators respond to command.
-
-Applications
-
-Home automation
-
-Robotics
-
-Embedded control
+Commands from Docklight directly triggered GPIO responses like turning LEDs on/off.
 
 
-*
+### Task 6: Final Output — Display Control Using UART
+🎯 Overview
+This implementation receives UART input and reflects it on a 7-segment display.
+
+### 🔹 Function
+
+UART receives serial data from Docklight.
+
+Display value increases with each input.
+
+Output is shown live on a 7-segment display.
+
+Components include top.v, uart_rx, seven_seg_decoder, PCF file, Makefile, and demo video.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
