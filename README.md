@@ -152,6 +152,10 @@ UART transmission logic
 Baud rate control
 Real-time data is visible on PuTTY or Docklight.
 
+[putty terminal.jpeg](./Task%204/putty%20terminal.jpeg)
+
+[putty](./Task%204/putty.jpeg)
+
 ### 🔹 Applications
 
 Environmental data collection
@@ -160,6 +164,12 @@ Industrial monitoring
 
 IoT sensor gateways
 Block diagrams, circuit visuals, and output video were included for verification.
+
+[Block diagram.jpeg](./Task%204/Block%20diagram.jpeg)
+
+[circuit diagram.jpeg](./Task%204/circuit%20diagram.jpeg)
+
+[vedio.mp4](./Task%204/vedio.mp4)
 
 # Task 5: UART-Driven Display System (Theme 1)
 ### 🎯 Goal
