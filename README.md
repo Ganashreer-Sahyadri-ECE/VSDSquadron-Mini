@@ -19,8 +19,12 @@ Counter: 28-bit register counts on each clock tick, with one bit (bit 5) exposed
 RGB Driver (SB_RGBA_DRV): Drives the onboard LED. Blue is active; red and green are inactive.
 This setup offers a minimal design for onboard LED control and timing verification using the FPGA’s internal resources.
 
+[verilog file](./Task%201/verilog%20file)
+
 ### 🔹 Step 2: Creating a Pin Constraint File
 Mapped Verilog signals to the FPGA hardware pins as follows:
+
+[pin mapping](./Task%201/pin%20mapping)
 
 led_red → Pin 39
 
