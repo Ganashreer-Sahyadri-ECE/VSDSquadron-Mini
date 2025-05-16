@@ -46,6 +46,8 @@ The onboard LED behavior confirmed a successful upload.
 ### 🔹 Step 4: Final Steps
 A video was captured demonstrating the blinking LED behavior to verify the system’s functioning.
 
+[Working vedio.mp4](./Task%201/Working vedio.mp4)
+
 # Task 2: UART Loopback Implementation
 🎯 Objective
 Develop a simple UART echo mechanism to test UART transmission and reception by looping back the sent data.
