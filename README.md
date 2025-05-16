@@ -46,7 +46,7 @@ The onboard LED behavior confirmed a successful upload.
 ### 🔹 Step 4: Final Steps
 A video was captured demonstrating the blinking LED behavior to verify the system’s functioning.
 
-[Working vedio.mp4](./Task%201/Working vedio.mp4)
+[Working vedio.mp4](./Task%201/Working%20vedio.mp4)
 
 # Task 2: UART Loopback Implementation
 🎯 Objective
