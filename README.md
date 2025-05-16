@@ -105,7 +105,11 @@ Included:
 
 Block diagram
 
+[block diagram.jpeg](./Task3/block%20diagram.jpeg)
+
 Circuit diagram
+
+[circuit diagram.jpeg](./Task3/circuit%20diagram.jpeg)
 
 ### 🔹 Step 3: Upload to FPGA
 Navigated to the transmission folder, then ran:
@@ -118,8 +122,14 @@ sudo make flash
 ### 🔹 Step 4: Testing
 Opened PuTTY to verify that characters were continuously transmitted. The output confirmed regular transmission.
 
+[Putty Terminal.jpeg](./Task3/Putty%20Terminal.jpeg)
+
 ### 🔹 Step 5: Documentation
 Included all diagrams and a video showing successful data output.
+
+[Transmitted.jpeg](./Task3/Transmitted.jpeg)
+
+[vedio.mp4](./Task3/vedio.mp4)
 
 # Task 4: UART-Based Sensor Communication
 ### 🎯 Goal
