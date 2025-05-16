@@ -66,8 +66,12 @@ uart_tx: Sends the same data back.
 uart_loopback_top: Connects both for an echo test.
 This setup allows basic testing of UART in 8N1 format (8 data bits, no parity, 1 stop bit).
 
+[Code explanation](./Task%202/Code%20explanation)
+
 ### 🔹 Step 2: Documentation
 Created a block diagram to illustrate the module interactions.
+
+[Block Diagram.jpeg](./Task%202/Block%20Diagram.jpeg)
 
 ### 🔹 Step 3: Board Programming
 Files were compiled and flashed using:
@@ -80,6 +84,14 @@ make build
 sudo make flash
 ### 🔹 Step 4: Testing and Output
 Tested the design using the Docklight terminal. Sent characters were echoed back successfully.
+
+[doclight.jpeg](./Task%202/doclight.jpeg)
+
+[result](./Task%202/result.jpeg)
+
+[terminal](./Task%202/terminal.jpeg)
+
+[Vedio 2025-04-27 at 20.32.40.mp4](./Task%202/Vedio%202025-04-27%20at%2020.32.40.mp4)
 
 # Task 3: UART Transmitter Module
 🎯 Objective
