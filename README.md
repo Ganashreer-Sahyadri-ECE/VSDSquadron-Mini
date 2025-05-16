@@ -247,6 +247,8 @@ Output is shown live on a 7-segment display.
 
 Components include top.v, uart_rx, seven_seg_decoder, PCF file, Makefile, and demo video.
 
+[block_diagram(7-segment).jpeg](./Task%206/block_diagram(7-segment).jpeg)
+
 [top.v](./Task%206/top.v)
 
 [constraints.pcf](./Task%206/constraints.pcf)
