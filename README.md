@@ -223,6 +223,8 @@ Commands translated into output actions.
 
 Commands from Docklight directly triggered GPIO responses like turning LEDs on/off.
 
+[block_diagram.jpeg](./Task%206/blockd_iagram.jpeg)
+
 [ledtop.v](./Task%206/ledtop.v)
 
 [VSDSquadronFM.pcf](./Task%206/VSDSquadronFM.pcf)
