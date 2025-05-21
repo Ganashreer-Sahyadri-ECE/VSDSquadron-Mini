@@ -1,7 +1,7 @@
 set_io clk     20  # Onboard 50MHz
 set_io uartrx  15  # UART RX from FTDI/Docklight
-set_io rgb[0]  18 # RED
-set_io rgb[1]  19  # GREEN
-set_io rgb[2]  2  # BLUE
+set_io rgb[0]  18 # RED1
+set_io rgb[1]  19  # RED2
+set_io rgb[2]  2  # RED3
 
 
