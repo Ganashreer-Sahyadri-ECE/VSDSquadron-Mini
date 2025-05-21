@@ -231,7 +231,7 @@ Commands from Docklight directly triggered GPIO responses like turning LEDs on/o
 
 [leduart_rx.v](./Task%206/leduart_rx.v)
 
-[led vedio.mp4](./Task%206/led%20vedio.mp4)
+[led vedio.mp4](./Task%206/LED_working_vedio.mp4)
 
 ### Task 6: Final Output — Display Control Using UART
 🎯 Overview
@@ -255,7 +255,7 @@ Components include top.v, uart_rx, seven_seg_decoder, PCF file, Makefile, and de
 
 [uart_rx.v](./Task%206/uart_rx.v)
 
-[Seven_segment project vedio.mp4](./Task%206/Seven_segment%20project%20vedio.mp4)
+[Seven_segment project vedio.mp4](./Task%206/Seven_segment_working_vedio.mp4)
 
 
 
